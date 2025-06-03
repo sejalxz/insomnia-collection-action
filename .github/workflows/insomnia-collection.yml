@@ -13,15 +13,13 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
-      with:
-        path: ./${{ github.run_id}}-{{github.run_attempt}}/insomnia-collection
-
+  
     - name: Run Insomnia Collection with Docker
       shell: bash
       run: |
         cd ${{ github.workspace }}/collections
         docker run --rm \
-        -v $(pwd):/var/temp \
+        -v ${{ github.workspace }}/collections:/var/temp \
         kong/inso:latest \
         run collection -w /var/temp/order-api.yaml --report > test-results.json
 
