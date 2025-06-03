@@ -21,12 +21,12 @@ jobs:
         docker run --rm \
         -v ${{ github.workspace }}/collections:/var/temp \
         kong/inso:latest \
-        run collection -w /var/temp/order-api.yaml --reporter json > test-results.json
+        run collection -w /var/temp/order-api.yaml --reporter html > test-results.html
 
     - name: Upload Test Results
       uses: actions/upload-artifact@v4
       with:
         name: insomnia-test-results
-        path: collections/test-results.json
+        path: collections/test-results.html
         retention-days: 30
 
