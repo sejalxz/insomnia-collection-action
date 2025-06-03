@@ -1,0 +1,167 @@
+_type: export
+__export_format: 4
+__export_date: 2025-06-03T11:49:38.848Z
+__export_source: insomnia.desktop.app:v2022.6.0
+resources:
+  - _id: req_94c81e0852864397b7efec77dee6fc4d
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748951296725
+    created: 1748951287060
+    url: http://localhost:8081/api/orders/1
+    name: Delete Order
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1748951287060
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_bf3730d354334c62b843fb0c49b22c77
+    parentId: null
+    modified: 1748951348612
+    created: 1748949989991
+    name: Order API
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_35485311a4574242af94bb7b4581f035
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748951279553
+    created: 1748951272139
+    url: http://localhost:8081/api/orders/1
+    name: Update Order
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "customerName": "Jane Smith",
+          "productName": "iPhone 15",
+          "quantity": 2,
+          "totalAmount": 2399.98,
+          "status": "CONFIRMED"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1748951272139
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3793ba65d39e471c9280a7af163999f7
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748951263830
+    created: 1748951253843
+    url: http://localhost:8081/api/orders/1
+    name: GET Order by Id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1748951253843
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8f6dd7883b8449348da210e2e258298c
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748951245767
+    created: 1748951191722
+    url: http://localhost:8081/api/orders
+    name: GET ALL Orders
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1748951191722
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_db1cdbdd854742eebd2aee608765c9a0
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748951219801
+    created: 1748950898477
+    url: http://localhost:8081/api/orders
+    name: Create Order
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"customerName": "John Doe",
+        	"productName": "MacBook Pro",
+        	"quantity": 1,
+        	"totalAmount": 1299.99,
+        	"status": "PENDING"
+        }
+    parameters: []
+    headers:
+      - id: pair_7549f2d5040f40a79d4c782ac2f8abdc
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1748950898477
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_7db6da0133434ab6bb50c37440f8e54e
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748950066735
+    created: 1748949990004
+    name: New Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1748949990004
+    _type: environment
+  - _id: jar_5a01225022b5445f9d6a11673dcc484c
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748949990005
+    created: 1748949990005
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_d1d08ed5d355468c99c211ab1b9cbdfc
+    parentId: wrk_bf3730d354334c62b843fb0c49b22c77
+    modified: 1748951156298
+    created: 1748951156298
+    fileName: Insomnia
+    contents: ""
+    contentType: yaml
+    _type: api_spec

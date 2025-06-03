@@ -1,0 +1,34 @@
+name: Run Insomnia Collection
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  insomnia:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        path: ./${{ github.run_id}}-{{github.run_attempt}}/insomnia-collection
+
+    - name: Run Insomnia Collection with Docker
+      shell: bash
+      run: |
+        cd ${{ github.workspace }}/collections
+        docker run --rm \
+        -v $(pwd):/var/temp \
+        kong/inso:latest \
+        run collection -w /var/temp/order-api.yaml --report > test-results.json
+
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: insomnia-test-results
+        path: collections/test-results.json
+        retention-days: 30
+
