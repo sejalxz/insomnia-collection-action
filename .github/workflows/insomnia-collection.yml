@@ -21,7 +21,7 @@ jobs:
         docker run --rm \
         -v ${{ github.workspace }}/collections:/var/temp \
         kong/inso:latest \
-        run collection -w /var/temp/order-api.yaml --report > test-results.json
+        run collection -w /var/temp/order-api.yaml --reporter json > test-results.json
 
     - name: Upload Test Results
       uses: actions/upload-artifact@v4
